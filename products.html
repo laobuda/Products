@@ -1,0 +1,24 @@
+<fieldset>
+	<div class="parentDiv">
+
+		<div>
+			<fieldset>
+				<legend>Products</legend>
+				<ul class="products">
+					<li *ngFor=" let product of products" (click)="onSelect(product)" [class.selected]="product === selectedProduct">
+						<td align="left">{{product.product_name}}</td>
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+		<div *ngIf="selectedProduct">
+			<fieldset>
+				<legend>Product details</legend>
+				<tr align="left">Product name: {{selectedProduct.product_name}}</tr>
+				<tr align="left" >License: {{selectedProduct.license}}</tr>
+				<tr align="left">URL: <a target="_blank" href="{{selectedProduct.url}}">{{selectedProduct.url}}</a></tr>
+			</fieldset>
+		</div>
+
+	</div>
+</fieldset>
