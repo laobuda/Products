@@ -1,13 +1,13 @@
-// - Routes instead of RouteConfig
-// - RouterModule instead of provideRoutes
-import { provideRouter, RouterConfig } from '@angular/router';
 
+//import { provideRouter, RouterConfig } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ProductList } from './productList';
 import { Home } from './home';
 
-const routes: RouterConfig = [
+//onst routes: RouterConfig = [
+const routes: Routes = [
   {
-    path: 'products',
+    path: '/products',
     component: ProductList,
   },
   {
@@ -17,5 +17,5 @@ const routes: RouterConfig = [
 ];
 
 export const APP_ROUTER_PROVIDERS = [
-  provideRouter(routes)
+  RouterModule(routes)
 ];

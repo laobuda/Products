@@ -7,11 +7,12 @@ import { HttpModule, JsonpModule} from '@angular/http';
 import {Pipe, PipeTransform} from '@angular/core';
 import {KeysPipe} from './KeysPipe';
 import {Home} from './home';
-//import { APP_ROUTER_PROVIDERS } from './app.routes';
+import { RouterModule, Routes } from '@angular/router';
+import { APP_ROUTER_PROVIDERS } from './app.routes';
 @NgModule({
   imports: [ BrowserModule, HttpModule, JsonpModule],
   declarations: [ AppComponent, ProductList, Header, KeysPipe, Home ],
   providers : [ProductList],
-  bootstrap: [ AppComponent]
+  bootstrap: [ AppComponent, [APP_ROUTER_PROVIDERS]]
 })
 export class AppModule { }

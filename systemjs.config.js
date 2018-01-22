@@ -20,11 +20,13 @@
       '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-      "@angular/router":  "3.0.0-rc.1",
+      "@angular/router":  "^3.0.0-rc.2",
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
       // other libraries
-      'rxjs':                       'npm:rxjs',
+      //'rxjs':                       'npm:rxjs',
+      'rxjs':                      'npm:rxjs@5.5.2',
+      'rxjs/operators':            'npm:rxjs@5.5.2/operators/index.js',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
     },
     // packages tells the System loader how to load when no filename and/or no extension
@@ -39,7 +41,9 @@
       'angular2-in-memory-web-api': {
         main: './index.js',
         defaultExtension: 'js'
-      }
+      },
+      '@angular/router': { main: 'index.js', defaultExtension: 'js' }
+      
     }
   });
 })(this);
